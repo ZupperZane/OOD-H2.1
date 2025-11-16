@@ -16,9 +16,7 @@ public class ClothingProduct extends Product{
         return Name;
     }
 
-    public void displayInfo(){
-        System.out.println("CLothing Product:");
-        System.out.println("Details for Product: "+ Name+".");
-        System.out.println("Price: "+Price+"$");
+    public void display(){
+        System.out.println("Product: "+Name+" ,Price: "+Price+"$");
     }
 }

@@ -20,8 +20,8 @@ public class Main {
         Clothing.addProductList(Jacket);
         // organize into Black Friday Deals
         Category BlackFridayDeals = new Category("Black Friday Deals");
-        BlackFridayDeals.addCatList(Electronics);
-        BlackFridayDeals.addCatList(Clothing);
+        BlackFridayDeals.addProductList(Electronics);
+        BlackFridayDeals.addProductList(Clothing);
         // Register Customers
         Customer Bobby = new Customer("Bobby");
         Customer Tommy = new Customer("Tommy");
@@ -31,7 +31,7 @@ public class Main {
         Deals.addSubscriber(Tommy);
 
         //Display Category
-        BlackFridayDeals.Display();
+        BlackFridayDeals.display();
         // Notify
         Deals.notifyCustomers("Huge discounts on Electronics!");
     }
