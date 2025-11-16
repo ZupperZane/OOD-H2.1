@@ -10,7 +10,9 @@ public class BlackFridayDeals {
         Subscribers.add(next);
     }
 
-    public void notifyCustomer(String Deal){
-
+    public void notifyCustomers(String Deal){
+            for (Customer cur : Subscribers) {
+                cur.receiveNotification(Deal);
+            }
     }
 }

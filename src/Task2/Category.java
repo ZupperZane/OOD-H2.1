@@ -18,14 +18,18 @@ public class Category {
         Name=name;
     }
 
-    public void Display(){
-        System.out.println("Subcategories:");
-            for (Category category : CatList) {
-                System.out.print(category+", ");
-            }
-        System.out.println("Products:");
+    public void PrintProducts(){
         for (Product product : ProductList) {
-            System.out.print(product+", ");
+            System.out.println("Product: "+product.Name+", Price: "+product.Price);
         }
     }
-}
+
+    public void Display(){
+        System.out.println("Product Catalog:");
+        System.out.println("Category: "+this.Name);
+            for (Category cur : CatList) {
+                System.out.println("Category: "+cur.Name);
+                cur.PrintProducts();
+            }
+        }
+    }

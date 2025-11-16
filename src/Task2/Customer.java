@@ -3,12 +3,12 @@ package Task2;
 public class Customer {
     public String Name;
 
-    public void Customer(String name) {
+    public Customer(String name) {
         Name = name;
     }
 
-    public void receiveNotification(){
-        System.out.println("Recieved new Deal");
+    public void receiveNotification(String Deal){
+        System.out.println("Dear "+Name+", Recieved new Deal:"+Deal);
 
     }
 }
