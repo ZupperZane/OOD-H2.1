@@ -9,6 +9,14 @@ public class EmailVal implements Validation{
 
     @Override
     public void validate(Registration request) throws Exception{
+        String email = request.getEmail();
+        // this string is from https://www.baeldung.com/java-email-validation-regex
+        String regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$";
+        if (email.matches(regex)){
+            nextVal.validate(request);
+        } else{
+            throw new Exception("Email needs to be a valid Address.0");
+        }
 
     }
 }

@@ -9,6 +9,13 @@ public class PhoneVal implements Validation{
 
     @Override
     public void validate(Registration request) throws Exception{
-
+       String phone = request.getPhoneNumber();
+       //https://stackoverflow.com/questions/27631692/phone-number-validation-in-java
+        // used the regex from this
+       if (phone.matches("^\\+([0-9\\-]?){9,11}[0-9]$")){
+           nextVal.validate(request);
+       } else{
+           throw new Exception("Phone must be only Numbers & 9 Characters");
+       }
     }
 }
