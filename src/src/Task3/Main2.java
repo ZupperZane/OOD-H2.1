@@ -25,8 +25,26 @@ public class Main2  extends JFrame{
         confirmValidateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    register.setRegistration(UserField,passwordField1,EmailField,PhoneField);
+                try {
+                    // Read/set registration
+                    register.setRegistration(UserField, passwordField1, EmailField, PhoneField);
+                    // Initialize
+                    Validation usernameVal = new UsernameVal();
+                    Validation passwordVal = new PasswordVal();
+                    Validation emailVal = new EmailVal();
+                    Validation phoneVal = new PhoneVal();
+                    // Set up COR
+                    usernameVal.NextVal(passwordVal);
+                    passwordVal.NextVal(emailVal);
+                    emailVal.NextVal(phoneVal);
+                    //Begin Chain
+                    usernameVal.validate(register);
+                    System.out.println("All validations passed.");
+
+                } catch (Exception ex) {
+                    System.out.println("Validation failed: " + ex.getMessage());
                 }
+            }
         });
 
 

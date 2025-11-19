@@ -12,12 +12,12 @@ public class UsernameVal implements Validation{
     @Override
     public void validate(Registration request) throws Exception {
     String UserName = request.getUsername();
-    if ( UserName == null ){
-        if (UserName.length()>5){
-            //Valid
-            nextVal.validate(request);
+        if (UserName.length()<5){
+            if(nextVal!=null){
+                nextVal.validate(request);
+            }
+        } else{
+            throw new Exception("Email needs to be a valid Address.0");
         }
-    } throw new Exception("Username must be at least 5 Characters.");
-
     }
 }
