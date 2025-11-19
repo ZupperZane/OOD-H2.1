@@ -9,16 +9,8 @@ public abstract class HurricanePredictionTemplate {
         this.postprocessResults();
     }
 
-    void fetchdata(){
-
-    }
-    void preprocessData(){
-
-    }
-    void applyPredictionModel(){
-
-    }
-    void postprocessResults(){
-
-    }
+    abstract void fetchdata();
+    abstract void preprocessData();
+    abstract void applyPredictionModel();
+    abstract void postprocessResults();
 }

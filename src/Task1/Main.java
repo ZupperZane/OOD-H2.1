@@ -3,25 +3,26 @@ package Task1;
 public class Main {
 
     public static void main(String[] args) {
-
+       // System.out.println("Statistical Created");
         StatisticalPrediction statistical = new StatisticalPrediction();
-        statistical.PredictHurricane();
-
+      //  System.out.println("ML Created");
         MachineLearningPrediction ml = new MachineLearningPrediction();
-        ml.PredictHurricane();
-
+       // System.out.println("Fetcher & Saver Initalized");
         WeatherDataFetcher fetcher = new WeatherDataFetcher();
         ResultSaver saver = new ResultSaver();
-
-        Command fetchCommand = new fetchDataCommand(fetcher);
+        //System.out.println("Commands Created: Statisical");
+        Command fetchCommand = new fetchDataCommand(fetcher,statistical);
+        Command preprocessCommand = new preprocessCommand(statistical);
         Command predictionCommand = new PredictionCommand(statistical);
-        Command saveCommand = new SaveResultsCommand(saver);
-
+        Command saveCommand = new SaveResultsCommand(saver,statistical);
+     //   System.out.println("Invoker Created");
         PredictionInvoker invoker = new PredictionInvoker();
+        // commands set
         invoker.addCommand(fetchCommand);
+        invoker.addCommand(preprocessCommand);
         invoker.addCommand(predictionCommand);
         invoker.addCommand(saveCommand);
-
+        //commands executed
         invoker.executeCommands();
 
     }

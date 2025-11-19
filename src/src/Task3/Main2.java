@@ -40,10 +40,11 @@ public class Main2  extends JFrame{
                     //Begin Chain
                     usernameVal.validate(register);
                     System.out.println("All validations passed.");
-
+                    confirmValidateButton.setText("Success");
                 } catch (Exception ex) {
                     System.out.println("Validation failed: " + ex.getMessage());
                 }
+
             }
         });
 

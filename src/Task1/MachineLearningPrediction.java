@@ -2,7 +2,6 @@ package Task1;
 
 public class MachineLearningPrediction extends HurricanePredictionTemplate{
 
-
     void fetchdata(){
         System.out.println("Fetching Data : Machine Learning Prediction.");
     }
